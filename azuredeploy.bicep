@@ -30,13 +30,13 @@ param createWithKeyVault bool = true
 ])
 param keyVaultSkuName string = 'standard'
 
-@description('Enter the base URL of an existing Key Vault')
+@description('Enter the base URL of an existing Key Vault. (ex. https://example.vault.azure.net). Only use if setting createWithKeyVault to false.')
 param keyVaultBaseUrl string = ''
 
 @description('The uri to the function package zip')
 param packageZipUri string = 'https://shibayan.blob.core.windows.net/azure-keyvault-letsencrypt/v3/latest.zip'
 
-@description('Tags')
+@description('Tags that will be applied to Azure resources')
 param tags object = {
   Application: 'keyvault-acmebot'
 }
